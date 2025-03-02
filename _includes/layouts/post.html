@@ -2,5 +2,10 @@
 layout: layouts/base
 ---
 <article>
+    <h1> {{ title }}</h1>
+    <p>
+    posted {{page.date | formatDate }}
+    {% if lastUpdated %} (updated {{ lastUpdated | formatDate }}) {% endif %}
+    </p>
     {{ content }}
 </article>

@@ -11,7 +11,14 @@ export default (eleventyConfig) => {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
-    eleventyConfig.addFilter("formatDate", (date) => `<time datetime="${date.toISOString()}">${date.toISOString().replace(/T.*/, "")}</time>` );
+    eleventyConfig.addFilter("formatDate", (date) =>{
+        if(date instanceof Date) {
+            return `<time datetime="${date.toISOString()}">${date.toISOString().replace(/T.*/, "")}</time>`;
+        } else {
+            console.error(`this isn't a date: ${date}`);
+            return date;
+        }
+    });
 
     eleventyConfig.addCollection("recent", async (collectionsApi) => {
         let getDate = (p) => p.data.lastUpdated || p.date;

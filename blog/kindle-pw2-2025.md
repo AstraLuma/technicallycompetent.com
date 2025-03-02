@@ -1,5 +1,4 @@
 ---
-date: 2024-02-27
 title:  "jailbreaking a kindle paperwhite 2 in 2025"
 ---
 

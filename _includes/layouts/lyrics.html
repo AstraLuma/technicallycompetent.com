@@ -2,20 +2,26 @@
 layout: layouts/base
 ---
 <article>
+    <h1> {{ title }}</h1>
+    {% if songURL %}
     <p>
-        this is an lyric sheet for
-        {% if songURL %}
-            <a href="{{ songURL }}">{{title}}</a></p>
-        {% else %}
-            {{ title }}
-        {% endif %}
+        this is an lyric sheet for <a href="{{ songURL }}">{{title}}</a>
     </p>
+    {% endif %}
 
     <div id="lyrics">
         {{ content }}
     </div>
 
     <p>Please email corrections to lyrics@ this domain</p>
+    <p>
+    updated
+    {% if lastUpdated %}
+        {{ lastUpdated | formatDate }}
+    {% else %}
+        {{ page.date | formatDate }}
+    {% endif %}
+    </p>
 </article>
 
 
