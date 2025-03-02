@@ -1,15 +1,15 @@
 ---
+date: 2024-02-27
 title:  "jailbreaking a kindle paperwhite 2 in 2025"
 ---
 
 The other day my kindle went into a bad state, and had to be factory reset.
-It's a good kindle I won forever ago by being on a team that hacked a
-hackathon's rules, I don't want to pay money for a new one.
 
+I got it working again, so here are the notes I took along the way.
 
 ## What I have
 * Kindle Paperwhite 2 / PW2 / Kindle Paperwhite 6th Gen
-* `$mount/system/version.txt`: `Kindle 5.4.0 (206145 050)`
+* `system/version.txt`: `Kindle 5.4.0 (206145 050)`
 
 ## literature review
 ### jailbreaks:
@@ -59,3 +59,34 @@ That doesn't work in the internet archive anymore, so I [made a backup](/pages/a
 Try rooting 5.4.0 with K5 JailBreak
 
 if that fails, update to 5.10.3 and try KindleBreak
+
+## results
+K5 jailbreak worked fine on 5.4.0, so I'm not updating for now
+
+On boot after reset the kindle wants to be registered, I got around this by
+copying my `system/acw/*` from the old kindle usb fs, and by deleting the
+welcome document
+
+I'm not convinced copying the acw helped any in hindsight, but that's what I
+did, and I'm not undoing all this to check if it was necessary
+
+mods (mostly from [NiLuJe's Snapshots thread](https://www.mobileread.com/forums/showthread.php?t=225030))
+* `kindle-jailbreak-1.16.N-r19426.tar.xz`
+* `kindle-rp-20180530.N-r18920.tar.xz`
+* `kual-batterystatus-1.1.N-r18977.tar.xz`
+* `kual-gawk-1.5.N-r18977.tar.xz`
+* `kual-helper-0.5.N-r18980.tar.xz`
+* `kual-kual-plus-0.2.N-r13380.tar.xz`
+* `kual-mrinstaller-1.7.N-r19303.tar.xz`
+* `KUAL-v2.7.35-g2d06358-20250103.tar.xz`
+* [`CollectionsManager_2.8.1.zip`](https://www.mobileread.com/forums/showthread.php?t=186305)
+  * I tried the 2017 versions from ADambi linked on the wiki linked from that
+    post, but they gave an error message
+
+KUAL has a "don't ota" button so I did that not the instructions from
+WinterBreak, pretty sure it's the same thing but automatic.
+
+I'm pretty sure I'm never connecting this to wifi ever again so it shouldn't
+matter, but better safe than sorry.
+
+Now I can read my book :)
