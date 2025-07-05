@@ -12,6 +12,7 @@ a walled garden :)
 ## Site Layout
 ├── [blog](blog/): dated blog posts(with [rss](feed.xml)!)\
 ├── [drafts](drafts/): drafts\
+├── [pages](pages/): pages that don't fit other categories like active project documentation or amazon licenses\
 └── [lyrics](lyrics/): song lyrics I've transcribed
 
 Also, [some meta notes](README).
