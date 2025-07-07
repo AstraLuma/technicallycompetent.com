@@ -2,15 +2,16 @@
 title: Prusa mk3s+ printer status
 ---
 
+started life maybe as an mk2 with an mk3 and mk3s+ upgrade kits?
+
 Next steps:
 * mmu2s -> mmu3 or ultimulti
 
-
-## input cable situation
-There is a single ethernet/power connector location now:
-![ethernet input](/assets/pages/prusa-mk3s/ethernet.jpg)
-I didn't plan for clearance of the ethernet from the bed, so the quarter inch
-bit provides enough of a shim to make it clear safely.
+as of 2025-05-07:
+* mk3s+
+  * except the extruder body is different and I can't find out why
+    * reprinting to fix
+* mmu2s, non-working
 
 ## power distribution
 ![power distribution](/assets/pages/prusa-mk3s/power.jpg)
@@ -31,6 +32,13 @@ relocate thing that I didn't write down the source of so it's easier to work
 on.
 
 M10 bowden tube connectors from unknown source: `M10PassthroughPLate_v15.stl`
+
+## input cable situation
+There is a single ethernet/power connector location now:
+![ethernet input](/assets/pages/prusa-mk3s/ethernet.jpg)
+I didn't plan for clearance of the ethernet from the bed, so the quarter inch
+bit provides enough of a shim to make it clear safely.
+
 
 ## octoprint
 ![octoprint pi](/assets/pages/prusa-mk3s/octopi.jpg)
