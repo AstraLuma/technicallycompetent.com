@@ -89,3 +89,17 @@ I'm pretty sure I'm never connecting this to wifi ever again so it shouldn't
 matter, but better safe than sorry.
 
 Now I can read my book :)
+
+
+===
+UPDATE 2025-05-30
+some [certs expired](https://www.mobileread.com/forums/showpost.php?p=4510449&postcount=2) and things wouldn't launch anymore
+
+
+keysotre and update from https://www.mobileread.com/forums/showpost.php?p=4506164&postcount=1295
+update mkk/developer.keystore
+put k5 .bin in root, run update, not sure this was required
+no dice
+install jailbreak again, do keystore stuff again, no dice
+install mkk
+give up?
