@@ -55,7 +55,6 @@ test both antennas sparkfun and ublox sequentially
 * ZED-F9P rtk fixed
 
 #### outputs
-* data table of time, module, location, hacc, vacc, sensor fusion status, rtk status
 * graph each ublox like ![this person's](https://lh7-us.googleusercontent.com/ihaPLpK5bsSqtMJ0WP8bCQ0cPS7pMGX2N6o5RG_DigGCtahzaTeLNlR-OOVrrqFyKwqsbGePWa1bk0HRGxeMmwL-9q8mfYZ4mNd2TW2WHudRmB0B40oEeP7M5hXBu6AoJ0jRtHteAMZfMYSvEOQ_kSs)
 
 #### results
@@ -76,7 +75,6 @@ I kinda also want to try an M8P with netowrk ntrip vs M8P with local ntrip over 
 that would only be ublox antennas though
 
 #### outputs
-* data table of time, module, location, hacc, vacc, sensor fusion status, rtk status
 * graph of location for each module over time maybe on a map
 
 #### results
@@ -99,3 +97,6 @@ maybe accuracy lights for each board like sparkfun has on their kit, 10m, 5m, 1m
 ### data flow
 ublox -> mcu for status lights
 ublox -> computer for data logging
+
+log to table of
+time, module, location, hacc, vacc, sensor fusion status, rtk status, fix status(2d/3d)
