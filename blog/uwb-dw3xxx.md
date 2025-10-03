@@ -1,8 +1,12 @@
 ---
 title: UWB Qorvo DW3XXX family notes
+redirectFrom: drafts/uwb-dw3xxx
+lastUpdated: 2025-02-11
 ---
 
 SEE ALSO: [UWB Literature Review](/blog/uwb-lit-review)
+
+TL;DR: use [br101/zephyr-dw3000-decadriver](https://github.com/br101/zephyr-dw3000-decadriver)
 
 ## Qorvo/Decawave
 Decawave was bought by qorvo in 2020 and moved from open source to binary
@@ -126,7 +130,7 @@ can actually do uwb ranging
   * RIOT OS
 * DW3xxx based
   * qorvo DW3xxx Driver API, PHY layer
-    * [zephyr binary library](https://github.com/br101/zephyr-dw3000-decadriver)
+    * [zephyr library](https://github.com/br101/zephyr-dw3000-decadriver)
     * [reverse engineered notes](https://gist.github.com/egnor/455d510e11c22deafdec14b09da5bf54)
     * downloads from qorvo below
   * qorvo UWB-Stack: MAC layer and some fira stuff
