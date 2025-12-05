@@ -105,6 +105,10 @@ This worked with SDL 1, but not SDL2, you can see that by trying it with `sdl-jt
 ### Testing whatever windows gets via proton
 To test whatever the windows inside wine gets, this works:
 ```
+protontricks -c "wine control" $APPID
+```
+or maybe
+```
 WINEPREFIX=$STEAMLIBRARY/steamapps/compatdata/$APPID/pfx $STEAMLIBRARY/steamapps/common/Proton\ 5.0/dist/bin/wine64 control
 ```
 
