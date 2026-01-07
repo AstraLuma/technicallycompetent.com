@@ -56,6 +56,8 @@ Options:
   * Uses single dash with long arguments(`-storage <storage name>`)
   * `duplicacy prune -keep 7:30      # Keep 1 snapshot every 7 days for snapshots older than 30 days`
   * they have a nice if out of date [comparison of some backup solutions](https://github.com/gilbertchen/duplicacy#comparison-with-other-backup-tools)
+  * Has really good revision & diff tools
+  * Doesn't set a return code if it fails
 * [rdiff-backup][rdiff-backup]
   * mirrors the directory to $remoteBackupDir, and stores tracking data in $remoteBackupDir/rdiff-backup-data (`rdiff-backup-data/increments/file.2003-03-05T12:21:41-07:00.diff.gz`, `rdiff-backup-data/session_statistics*`)
   * in the middle of a cli syntax migration, old cli has been removed but is still in docs as of 2025-12-19
@@ -69,6 +71,12 @@ Options:
 * [bup][bup]
   * must have `bup` on remote server
 * [duplicati][duplicati]
+  * CLI exclusively refers to backups by remote URL
+    * Including credentials??
+  * Secrets handling is somewhere between "obtuse" and "actual garbage"
+  * GUI and CLI only kinda link maybe? or not at all?
+    * CLI can't refer to backups with no encryption password???
+  * Exploring backups in the GUI is just not a thing
 
 ## Other
 * [backupninja](https://0xacab.org/liberate/backupninja) is a tool to manage running backups aroiund borg or duplicity or whatever on a schedule including databases and stuff
