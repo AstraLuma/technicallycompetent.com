@@ -15,17 +15,18 @@ Comparison Criteria:
 
 
 ## Comparison
-|                    | [Duplicity][duplicity] | [borg][borg]               | [Duplicacy][duplicacy]       | [rdiff-backup][rdiff-backup] | [rclone][rclone] |
-| ----------         | ---------              | ----                       | ---------                    | ------------                 | ---------------- |
-| started            | 2002                   | 2015                       | 2016                         | 2001                         | 2014             |
-| license            | gpl                    | bsd                        | free for persnal use         | gpl                          | MIT              |
-| encryption         | yes                    | yes                        | yes                          | no                           | yes              |
-| incremental        | yes                    | yes                        | yes                          | yes                          | no?              |
-| show file versions | reasonable commands    | fuse mount maybe sometimes | nice commands                | reasonable commands          | n/a              |
-| backend            | any                    | borg                       | any                          | sftp/rsync                   | anything         |
-| prune mode         | age, count             | [GFS][gfs]                 | GFS                          | age, count                   | n/a              |
-| website vibes      | mature software        | new but alright            | trying to sell you something | mature software              | mature software  |
-| debian packaging   | 3.0.4 vs 3.0.6.3       | 1.4.0 vs 1.4.3             | github release binary        | 2.2.6 vs 2.2.6               | 1.60.1 vs 1.72.1 |
+|                    | [Duplicity][duplicity] | [borg][borg]               | [Duplicacy][duplicacy]                          | [rdiff-backup][rdiff-backup] | [rclone][rclone] |
+| ----------         | ---------              | ----                       | ---------                                       | ------------                 | ---------------- |
+| started            | 2002                   | 2015                       | 2016                                            | 2001                         | 2014             |
+| license            | gpl                    | bsd                        | free for persnal use                            | gpl                          | MIT              |
+| encryption         | yes                    | yes                        | yes                                             | no                           | yes              |
+| incremental        | yes                    | yes                        | yes                                             | yes                          | no?              |
+| show file versions | reasonable commands    | fuse mount maybe sometimes | git like, but bad in other ways (see notes)     | reasonable commands          | n/a              |
+| backend            | any                    | borg                       | any                                             | sftp/rsync                   | anything         |
+| prune mode         | age, count             | [GFS][gfs]                 | GFS                                             | age, count                   | n/a              |
+| website vibes      | mature software        | new but alright            | trying to sell you something                    | mature software              | mature software  |
+| abandonment vibes  |                        |                            | one commit in 2025, many ignored PRs and issues |                              |                  |
+| debian packaging   | 3.0.4 vs 3.0.6.3       | 1.4.0 vs 1.4.3             | github release binary                           | 2.2.6 vs 2.2.6               | 1.60.1 vs 1.72.1 |
 
 
 |                    | [restic][restic]       | [bup][bup]          | [duplicati][duplicati] |
@@ -38,6 +39,7 @@ Comparison Criteria:
 | backend            | sftp / rclone / cloud  | ssh + remote `bup`? | any                    |
 | prune mode         | GFS, age               | age                 | GFS, age, count        |
 | website vibes      | readthedocs            | mature              | sales pitch fuckery    |
+| abandonment vibes  |                        |                     |                        |
 | debian packaging   | 0.18.0 vs 0.18.1       | 0.33.7 vs 0.33.7    | download deb           |
 
 
@@ -57,7 +59,8 @@ Options:
   * `duplicacy prune -keep 7:30      # Keep 1 snapshot every 7 days for snapshots older than 30 days`
   * they have a nice if out of date [comparison of some backup solutions](https://github.com/gilbertchen/duplicacy#comparison-with-other-backup-tools)
   * Has really good revision & diff tools
-  * Doesn't set a return code if it fails
+  * returns 0 even on failure, author suggests grepping the logs, but the error/warning logs are not consistant
+  * uses single dash for long options
 * [rdiff-backup][rdiff-backup]
   * mirrors the directory to $remoteBackupDir, and stores tracking data in $remoteBackupDir/rdiff-backup-data (`rdiff-backup-data/increments/file.2003-03-05T12:21:41-07:00.diff.gz`, `rdiff-backup-data/session_statistics*`)
   * in the middle of a cli syntax migration, old cli has been removed but is still in docs as of 2025-12-19
@@ -67,7 +70,7 @@ Options:
   * restore file file backed up from `$whatever/file` to `/tmp/file`
     `rdiff-backup restore --at 10D $backupSpecifier/file /tmp/file`
 * [restic][restic]
-  * have to enter password ever command?
+  * have to enter password every command?
 * [bup][bup]
   * must have `bup` on remote server
 * [duplicati][duplicati]
